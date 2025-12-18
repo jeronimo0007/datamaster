@@ -1,0 +1,91 @@
+Controles de Acesso
+🔐 RBAC (Role-Based Access Control) no Azure AD
+
+🔑 Managed Identities para serviços
+
+📜 Key Vault para segredos
+
+🛡️ Network Security Groups e firewalls
+
+📝 Audit logs para compliance
+
+📚 Documentação
+📖 Arquitetura Detalhada
+Diagramas detalhados
+
+Decisões de arquitetura
+
+Padrões de design
+
+🔧 Guia de Deployment
+Passo a passo de instalação
+
+Configuração de ambientes
+
+Troubleshooting
+
+📊 Data Dictionary
+Schema de dados
+
+Dicionário de campos
+
+Regras de qualidade
+
+🤖 ML Models Documentation
+Modelos implementados
+
+Métricas de performance
+
+Guia de retreinamento
+
+👨‍💻 API Documentation
+Endpoints disponíveis
+
+Exemplos de uso
+
+Autenticação
+
+🤝 Contribuição
+Fork o projeto
+
+Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+
+Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+
+Push para a branch (git push origin feature/AmazingFeature)
+
+Abra um Pull Request
+
+📄 Licença
+Distribuído sob a licença MIT. Veja LICENSE para mais informações.
+
+👥 Autores
+Seu Nome - Engenheiro de Dados - LinkedIn
+
+Contribuidores - Lista de contribuidores
+
+🙏 Agradecimentos
+Banco Central do Brasil por estatísticas públicas
+
+Equipe Azure da Microsoft
+
+Comunidade Open Source
+
+Todos os contribuidores do projeto
+
+📞 Suporte
+Encontrou um problema?
+
+Verifique a documentação
+
+Procure em issues existentes
+
+Abra uma nova issue
+
+Precisa de ajuda?
+
+📧 Email: suporte@projeto.com
+
+💬 Slack: Canal de suporte
+
+🐦 Twitter: @fraud_detection

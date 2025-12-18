@@ -1,0 +1,19 @@
+Todos os serviços Azure estão rodando
+
+Pipeline está processando dados
+
+Dashboard está atualizando em tempo real
+
+API está respondendo
+
+Data Quality reports estão gerados
+
+Modelos ML estão deployados
+
+Slides estão prontos
+
+Ambiente de demo está configurado
+
+Backup de internet está disponível
+
+Tempo de apresentação foi cronometrado

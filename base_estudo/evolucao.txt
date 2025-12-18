@@ -1,0 +1,10 @@
+Próximos Passos de Evolução
+Multi-cloud: Adicionar suporte a AWS/GCP
+
+Edge Computing: Processamento na borda
+
+Blockchain: Registro imutável de transações
+
+Quantum Computing: Para modelos complexos
+
+Real-time Analytics: Druid/Kafka Streams

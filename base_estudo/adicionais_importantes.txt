@@ -1,0 +1,63 @@
+
+## 6. Arquivos Adicionais Importantes
+
+### CONTRIBUTING.md
+```markdown
+# Guia de Contribuição
+
+Obrigado por considerar contribuir com o projeto de Detecção de Fraudes!
+
+## Como Contribuir
+
+### 1. Reportando Bugs
+- Verifique se o bug já foi reportado
+- Use o template de issue
+- Inclua steps para reproduzir
+- Adicione logs e screenshots
+
+### 2. Sugerindo Melhorias
+- Descreva o problema ou necessidade
+- Explique a solução proposta
+- Inclua exemplos de uso
+
+### 3. Enviando Pull Requests
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## Padrões de Código
+
+### Python
+- Use type hints
+- Siga PEP 8
+- Documente funções com docstrings
+- Escreva testes unitários
+
+### Terraform
+- Use modules reutilizáveis
+- Documente variáveis e outputs
+- Versionamento semântico
+
+### Commit Messages
+- Use Conventional Commits
+- Escopo opcional: `feat(api): add new endpoint`
+- Exemplos:
+  - `feat: add new fraud detection model`
+  - `fix(data-quality): correct validation rule`
+  - `docs: update deployment guide`
+
+## Ambiente de Desenvolvimento
+
+### Setup
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/fraud-detection-azure.git
+cd fraud-detection-azure
+
+# Configure o ambiente
+make setup
+
+# Execute testes
+make test

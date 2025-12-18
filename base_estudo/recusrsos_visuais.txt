@@ -1,0 +1,20 @@
+Recursos Visuais para Apresentação
+Slide 1: Capa com logo e título
+
+Slide 2: Problema das fraudes bancárias (estatísticas)
+
+Slide 3: Arquitetura completa (diagrama)
+
+Slide 4: Comparativo Azure vs AWS (tabela)
+
+Slide 5: Data Quality pipeline
+
+Slide 6: ML Models performance
+
+Slide 7: Dashboard demo (screenshot)
+
+Slide 8: Custos e ROI
+
+Slide 9: Roadmap e melhorias futuras
+
+Slide 10: Q&A

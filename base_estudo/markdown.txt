@@ -1,0 +1,73 @@
+
+### CHANGELOG.md
+```markdown
+# Changelog
+
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
+e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2024-01-15
+
+### Adicionado
+- Arquitetura completa Azure cloud-native
+- Pipeline de detecção de fraudes em tempo real
+- Sistema de Data Quality com Great Expectations
+- Modelos de ML para detecção de fraudes
+- API REST com FastAPI
+- Dashboard de monitoramento com Streamlit
+- Infraestrutura como código com Terraform
+- CI/CD com GitHub Actions
+- Documentação completa
+- Testes unitários e de integração
+- Ambiente Docker para desenvolvimento local
+
+### Componentes Azure
+- Azure Event Hubs para streaming
+- Azure Databricks para processamento
+- Azure Data Lake Gen2 para armazenamento
+- Azure Synapse Analytics para data warehouse
+- Azure Cosmos DB para dados operacionais
+- Azure Machine Learning para MLOps
+- Azure Purview para governança de dados
+- Azure Monitor para observabilidade
+
+### Segurança
+- Mascaramento de dados para LGPD
+- Azure Key Vault para segredos
+- Azure AD para autenticação
+- RBAC para controle de acesso
+- Criptografia em trânsito e repouso
+
+## [0.9.0] - 2024-01-10
+
+### Adicionado
+- Versão beta do pipeline
+- Implementação inicial dos modelos de ML
+- Estrutura básica da API
+- Configuração inicial do Terraform
+
+## [0.8.0] - 2024-01-05
+
+### Adicionado
+- POC do sistema de detecção
+- Dados sintéticos para testes
+- Notebooks de exploração
+- Arquitetura inicial
+
+### Alterado
+- Melhoria na geração de dados
+- Otimização do pipeline Spark
+
+### Corrigido
+- Bugs na ingestão de dados
+- Problemas de performance
+
+## [0.1.0] - 2023-12-20
+
+### Adicionado
+- Projeto inicial
+- Estrutura básica de diretórios
+- Configuração do ambiente
+- Documentação inicial

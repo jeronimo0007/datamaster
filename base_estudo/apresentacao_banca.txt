@@ -1,0 +1,31 @@
+7. Instruções para Apresentação para a Banca
+Estrutura da Apresentação (90 minutos)
+Parte 1: Introdução (15 minutos)
+
+Contexto do problema de fraudes bancárias (5 min)
+
+Visão geral da solução proposta (5 min)
+
+Demonstração rápida do sistema em funcionamento (5 min)
+
+Parte 2: Arquitetura Detalhada (30 minutos)
+
+Diagrama completo da arquitetura (10 min)
+
+Componentes Azure vs AWS (10 min)
+
+Data Quality e Governança (5 min)
+
+Segurança e LGPD (5 min)
+
+Parte 3: Demonstração Técnica (30 minutos)
+
+Pipeline em tempo real (10 min)
+
+Data Quality em ação (5 min)
+
+Modelos de ML (5 min)
+
+Dashboard de monitoramento (5 min)
+
+Deploy com Terraform (5 min)

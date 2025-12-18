@@ -1,0 +1,19 @@
+Dashboards Disponíveis
+Power BI Dashboard - Análises de negócio
+
+Azure Monitor - Métricas operacionais
+
+Application Insights - Performance da API
+
+Databricks Dashboard - Monitoramento Spark
+
+Grafana (opcional) - Métricas customizadas
+
+Alertas Configurados
+🔴 Crítico: Taxa de fraude > 5%
+
+🟡 Aviso: Latência > 10 segundos
+
+🔵 Info: Novo padrão de fraude detectado
+
+🟢 Normal: Sistema operando dentro dos parâmetros

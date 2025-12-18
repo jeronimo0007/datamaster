@@ -1,0 +1,33 @@
+Pontos Chave para Destacar
+Arquitetura Completa: End-to-end pipeline
+
+Multi-cloud Ready: Componentes equivalentes AWS/GCP
+
+Data Quality: Great Expectations integrado
+
+MLOps: Pipeline completo de machine learning
+
+LGPD Compliance: Mascaramento e segurança
+
+IaC: Terraform para infraestrutura
+
+CI/CD: GitHub Actions automatizado
+
+Monitoring: Observabilidade completa
+
+Perguntas Prováveis da Banca
+Escalabilidade: Como o sistema escala para milhões de transações?
+
+Custos: Qual o custo estimado para produção?
+
+Latência: Qual a latência para detecção em tempo real?
+
+ML: Como os modelos são atualizados?
+
+Segurança: Como garantir conformidade com LGPD?
+
+Disaster Recovery: Qual a estratégia de backup?
+
+Monitoramento: Como detectar problemas proativamente?
+
+Manutenção: Qual a complexidade operacional?

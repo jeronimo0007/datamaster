@@ -1,0 +1,126 @@
+
+## 2. Makefile para Automatização
+
+```makefile
+.PHONY: help setup test lint format deploy destroy clean
+
+# Colors
+RED=\033[0;31m
+GREEN=\033[0;32m
+YELLOW=\033[1;33m
+NC=\033[0m # No Color
+
+help: ## Mostra esta ajuda
+	@echo "Comandos disponíveis:"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(GREEN)%-15s$(NC) %s\n", $$1, $$2}'
+
+setup: ## Configura ambiente de desenvolvimento
+	@echo "$(YELLOW)Configurando ambiente...$(NC)"
+	pip install -r requirements.txt
+	pip install -r requirements-dev.txt
+	pre-commit install
+	@echo "$(GREEN)✅ Ambiente configurado$(NC)"
+
+test: ## Executa testes unitários
+	@echo "$(YELLOW)Executando testes...$(NC)"
+	pytest tests/ -v --cov=src --cov-report=html
+	@echo "$(GREEN)✅ Testes concluídos$(NC)"
+
+test-integration: ## Executa testes de integração
+	@echo "$(YELLOW)Executando testes de integração...$(NC)"
+	pytest tests/integration/ -v
+	@echo "$(GREEN)✅ Testes de integração concluídos$(NC)"
+
+lint: ## Executa linting no código
+	@echo "$(YELLOW)Executando linting...$(NC)"
+	flake8 src/
+	black --check src/
+	mypy src/
+	bandit -r src/
+	@echo "$(GREEN)✅ Linting concluído$(NC)"
+
+format: ## Formata código automaticamente
+	@echo "$(YELLOW)Formatando código...$(NC)"
+	black src/
+	isort src/
+	@echo "$(GREEN)✅ Código formatado$(NC)"
+
+deploy-dev: ## Deploy no ambiente de desenvolvimento
+	@echo "$(YELLOW)Deploy no ambiente dev...$(NC)"
+	cd infrastructure/terraform/environments/dev && \
+	terraform init && \
+	terraform plan && \
+	terraform apply -auto-approve
+	@echo "$(GREEN)✅ Deploy dev concluído$(NC)"
+
+deploy-prod: ## Deploy no ambiente de produção
+	@echo "$(YELLOW)Deploy no ambiente prod...$(NC)"
+	cd infrastructure/terraform/environments/prod && \
+	terraform init && \
+	terraform plan && \
+	terraform apply -auto-approve
+	@echo "$(GREEN)✅ Deploy prod concluído$(NC)"
+
+destroy-dev: ## Destrói ambiente de desenvolvimento
+	@echo "$(YELLOW)Destruindo ambiente dev...$(NC)"
+	cd infrastructure/terraform/environments/dev && \
+	terraform destroy -auto-approve
+	@echo "$(GREEN)✅ Ambiente dev destruído$(NC)"
+
+run-pipeline: ## Executa pipeline de detecção de fraudes
+	@echo "$(YELLOW)Executando pipeline...$(NC)"
+	python scripts/run_pipeline.py --env dev
+	@echo "$(GREEN)✅ Pipeline executado$(NC)"
+
+generate-data: ## Gera dados de teste
+	@echo "$(YELLOW)Gerando dados de teste...$(NC)"
+	python scripts/generate_test_data.py --count 10000
+	@echo "$(GREEN)✅ Dados gerados$(NC)"
+
+monitor: ## Inicia monitoramento
+	@echo "$(YELLOW)Iniciando monitoramento...$(NC)"
+	python src/monitoring/dashboard.py
+	@echo "$(GREEN)✅ Monitoramento iniciado$(NC)"
+
+docker-up: ## Inicia containers Docker
+	@echo "$(YELLOW)Iniciando containers...$(NC)"
+	docker-compose up -d
+	@echo "$(GREEN)✅ Containers iniciados$(NC)"
+
+docker-down: ## Para containers Docker
+	@echo "$(YELLOW)Parando containers...$(NC)"
+	docker-compose down
+	@echo "$(GREEN)✅ Containers parados$(NC)"
+
+clean: ## Limpa arquivos temporários
+	@echo "$(YELLOW)Limpando arquivos...$(NC)"
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type d -name ".pytest_cache" -exec rm -rf {} +
+	find . -type d -name ".coverage" -exec rm -rf {} +
+	find . -type d -name "htmlcov" -exec rm -rf {} +
+	find . -type f -name "*.pyc" -delete
+	find . -type f -name "*.pyo" -delete
+	find . -type f -name ".DS_Store" -delete
+	@echo "$(GREEN)✅ Limpeza concluída$(NC)"
+
+security-scan: ## Executa varredura de segurança
+	@echo "$(YELLOW)Executando varredura de segurança...$(NC)"
+	bandit -r src/
+	safety check
+	trufflehog --regex --entropy=False .
+	@echo "$(GREEN)✅ Varredura de segurança concluída$(NC)"
+
+docs: ## Gera documentação
+	@echo "$(YELLOW)Gerando documentação...$(NC)"
+	pdoc --html src/ -o docs/api --force
+	mkdocs build
+	@echo "$(GREEN)✅ Documentação gerada$(NC)"
+
+open-dashboard: ## Abre dashboard local
+	@echo "$(YELLOW)Abrindo dashboard...$(NC)"
+	streamlit run src/monitoring/dashboard.py
+	@echo "$(GREEN)✅ Dashboard aberto$(NC)"
+
+# Alias
+build: setup format lint test ## Build completo
+all: build deploy-dev run-pipeline monitor ## Executa tudo
